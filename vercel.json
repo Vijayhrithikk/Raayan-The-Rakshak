@@ -1,9 +1,13 @@
 {
     "version": 2,
-    "name": "raayan-pitch",
+    "name": "raayan-the-rakshak",
     "builds": [
         {
             "src": "presentation.html",
+            "use": "@vercel/static"
+        },
+        {
+            "src": "frontend/**",
             "use": "@vercel/static"
         }
     ],
@@ -11,6 +15,26 @@
         {
             "src": "/",
             "dest": "/presentation.html"
+        },
+        {
+            "src": "/pitch",
+            "dest": "/presentation.html"
+        },
+        {
+            "src": "/dashboard",
+            "dest": "/frontend/index.html"
+        },
+        {
+            "src": "/dashboard/(.*)",
+            "dest": "/frontend/$1"
+        },
+        {
+            "src": "/app.js",
+            "dest": "/frontend/app.js"
+        },
+        {
+            "src": "/styles.css",
+            "dest": "/frontend/styles.css"
         }
     ]
 }
