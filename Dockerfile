@@ -28,5 +28,5 @@ ENV PYTHONPATH=/app/backend
 # Expose API port
 EXPOSE 8000
 
-# Start server
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Start server - use shell form for PORT env variable
+CMD python main.py
