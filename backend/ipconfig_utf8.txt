@@ -1,0 +1,115 @@
+﻿
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : Vijays
+   Primary Dns Suffix  . . . . . . . : 
+   Node Type . . . . . . . . . . . . : Mixed
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+
+Ethernet adapter Ethernet 2:
+
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Realtek USB GbE Family Controller
+   Physical Address. . . . . . . . . : 00-E0-4C-68-00-0C
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::3607:fcc7:d974:6eb5%13(Preferred) 
+   IPv4 Address. . . . . . . . . . . : 10.10.17.7(Preferred) 
+   Subnet Mask . . . . . . . . . . . : 255.255.192.0
+   Lease Obtained. . . . . . . . . . : 05 January 2026 23:46:49
+   Lease Expires . . . . . . . . . . : 06 January 2026 04:25:37
+   Default Gateway . . . . . . . . . : 10.10.1.1
+   DHCP Server . . . . . . . . . . . : 10.10.1.1
+   DHCPv6 IAID . . . . . . . . . . . : 671146060
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-2F-15-49-D3-B8-1E-A4-DC-7C-2D
+   DNS Servers . . . . . . . . . . . : 8.8.8.8
+                                       103.88.219.217
+                                       202.56.230.7
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+
+Unknown adapter McAfee VPN:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : TAP-Windows Adapter V9
+   Physical Address. . . . . . . . . : 00-FF-C6-BC-6A-CF
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+
+Wireless LAN adapter Local Area Connection* 1:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Microsoft Wi-Fi Direct Virtual Adapter
+   Physical Address. . . . . . . . . : BA-1E-A4-DC-7C-2D
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+
+Wireless LAN adapter Local Area Connection* 2:
+
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Microsoft Wi-Fi Direct Virtual Adapter #2
+   Physical Address. . . . . . . . . : BE-1E-A4-DC-7C-2D
+   DHCP Enabled. . . . . . . . . . . : No
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::89f9:6b51:dde3:5bc2%10(Preferred) 
+   IPv4 Address. . . . . . . . . . . : 192.168.137.1(Preferred) 
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : 
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+
+Wireless LAN adapter Wi-Fi:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Realtek RTL8852BE WiFi 6 802.11ax PCIe Adapter
+   Physical Address. . . . . . . . . : B8-1E-A4-DC-7C-2D
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+
+Ethernet adapter VMware Network Adapter VMnet1:
+
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : VMware Virtual Ethernet Adapter for VMnet1
+   Physical Address. . . . . . . . . : 00-50-56-C0-00-01
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::f030:4553:c90a:395e%7(Preferred) 
+   IPv4 Address. . . . . . . . . . . : 192.168.111.1(Preferred) 
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Lease Obtained. . . . . . . . . . : 05 January 2026 14:11:55
+   Lease Expires . . . . . . . . . . : 06 January 2026 00:51:50
+   Default Gateway . . . . . . . . . : 
+   DHCP Server . . . . . . . . . . . : 192.168.111.254
+   DHCPv6 IAID . . . . . . . . . . . : 637554774
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-2F-15-49-D3-B8-1E-A4-DC-7C-2D
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+
+Ethernet adapter VMware Network Adapter VMnet8:
+
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : VMware Virtual Ethernet Adapter for VMnet8
+   Physical Address. . . . . . . . . : 00-50-56-C0-00-08
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::c4fc:b82a:f53d:3547%9(Preferred) 
+   IPv4 Address. . . . . . . . . . . : 192.168.227.1(Preferred) 
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Lease Obtained. . . . . . . . . . : 05 January 2026 14:11:58
+   Lease Expires . . . . . . . . . . : 06 January 2026 00:51:50
+   Default Gateway . . . . . . . . . : 
+   DHCP Server . . . . . . . . . . . : 192.168.227.254
+   DHCPv6 IAID . . . . . . . . . . . : 654331990
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-2F-15-49-D3-B8-1E-A4-DC-7C-2D
+   Primary WINS Server . . . . . . . : 192.168.227.2
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+
+Ethernet adapter Bluetooth Network Connection:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Bluetooth Device (Personal Area Network)
+   Physical Address. . . . . . . . . : B8-1E-A4-DC-7C-2E
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes

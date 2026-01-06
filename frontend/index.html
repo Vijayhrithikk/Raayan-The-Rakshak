@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Cyber Intelligence Platform</title>
+    <link rel="stylesheet" href="styles.css?v=config-panel">
+    <!-- D3.js for network graph -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <!-- Chart.js for traffic charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <div class="logo">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+                <h1>Campus Cyber Intelligence Platform</h1>
+            </div>
+            <span class="subtitle">Situational Awareness & Decision Support</span>
+        </div>
+        <div class="header-right">
+            <div class="status-indicator" id="systemStatus">
+                <span class="status-dot"></span>
+                <span>System Active</span>
+            </div>
+            <button class="btn btn-primary" onclick="generateDemo()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="5 3 19 12 5 21 5 3" />
+                </svg>
+                Generate Demo
+            </button>
+            <button class="btn btn-secondary" onclick="refreshData()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="23 4 23 10 17 10" />
+                    <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10" />
+                </svg>
+                Refresh
+            </button>
+        </div>
+    </header>
+
+    <!-- Stats Cards -->
+    <section class="stats-grid">
+        <div class="stat-card critical">
+            <div class="stat-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="12" y1="8" x2="12" y2="12" />
+                    <line x1="12" y1="16" x2="12.01" y2="16" />
+                </svg>
+            </div>
+            <div class="stat-content">
+                <span class="stat-value" id="criticalCount">0</span>
+                <span class="stat-label">Critical</span>
+            </div>
+        </div>
+        <div class="stat-card high">
+            <div class="stat-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                        d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                    <line x1="12" y1="9" x2="12" y2="13" />
+                    <line x1="12" y1="17" x2="12.01" y2="17" />
+                </svg>
+            </div>
+            <div class="stat-content">
+                <span class="stat-value" id="highCount">0</span>
+                <span class="stat-label">High</span>
+            </div>
+        </div>
+        <div class="stat-card medium">
+            <div class="stat-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="12" y1="16" x2="12" y2="12" />
+                    <line x1="12" y1="8" x2="12.01" y2="8" />
+                </svg>
+            </div>
+            <div class="stat-content">
+                <span class="stat-value" id="mediumCount">0</span>
+                <span class="stat-label">Medium</span>
+            </div>
+        </div>
+        <div class="stat-card low">
+            <div class="stat-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M8 12h8" />
+                </svg>
+            </div>
+            <div class="stat-content">
+                <span class="stat-value" id="lowCount">0</span>
+                <span class="stat-label">Low</span>
+            </div>
+        </div>
+        <div class="stat-card info">
+            <div class="stat-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                    <line x1="8" y1="21" x2="16" y2="21" />
+                    <line x1="12" y1="17" x2="12" y2="21" />
+                </svg>
+            </div>
+            <div class="stat-content">
+                <span class="stat-value" id="deviceCount">0</span>
+                <span class="stat-label">Devices</span>
+            </div>
+        </div>
+        <div class="stat-card info">
+            <div class="stat-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                </svg>
+            </div>
+            <div class="stat-content">
+                <span class="stat-value" id="flowCount">0</span>
+                <span class="stat-label">Flows</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Setup Guide & Configuration Panel -->
+    <section class="setup-guide-panel">
+        <div class="setup-header">
+            <h2>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path
+                        d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                    </path>
+                </svg>
+                Deployment & Configuration
+            </h2>
+            <span class="setup-subtitle">Configure your network environment</span>
+        </div>
+
+        <div class="setup-content">
+            <!-- Deployment Options -->
+            <div class="deployment-cards">
+                <div class="deploy-card campus">
+                    <div class="deploy-icon">🎓</div>
+                    <h3>Campus Network</h3>
+                    <p>Universities, Schools, Colleges</p>
+                    <ul class="deploy-checklist">
+                        <li>Cisco Catalyst Switch</li>
+                        <li>SPAN Port Mirroring</li>
+                        <li>VLAN Monitoring</li>
+                    </ul>
+                    <code class="config-snippet">monitor session 1 source vlan 10-50</code>
+                </div>
+
+                <div class="deploy-card enterprise">
+                    <div class="deploy-icon">🏢</div>
+                    <h3>Enterprise</h3>
+                    <p>Corporate, Datacenter, SOC</p>
+                    <ul class="deploy-checklist">
+                        <li>Network TAP / ERSPAN</li>
+                        <li>NetFlow Integration</li>
+                        <li>SIEM Compatible</li>
+                    </ul>
+                    <code class="config-snippet">flow exporter IDS destination 10.0.0.100</code>
+                </div>
+
+                <div class="deploy-card public">
+                    <div class="deploy-icon">📶</div>
+                    <h3>Public WiFi</h3>
+                    <p>Airports, Hotels, Cafes</p>
+                    <ul class="deploy-checklist">
+                        <li>MikroTik / Ubiquiti</li>
+                        <li>Traffic Flow Export</li>
+                        <li>Hotspot Monitoring</li>
+                    </ul>
+                    <code class="config-snippet">/ip traffic-flow set enabled=yes</code>
+                </div>
+            </div>
+
+            <!-- Configuration Input -->
+            <div class="config-panel">
+                <h3>⚙️ Quick Configuration</h3>
+                <div class="config-grid">
+                    <div class="config-group">
+                        <label>Network Interface</label>
+                        <select id="configInterface">
+                            <option value="auto">Auto-Detect (Recommended)</option>
+                            <option value="eth0">eth0 (Linux)</option>
+                            <option value="Ethernet">Ethernet (Windows)</option>
+                            <option value="Wi-Fi">Wi-Fi</option>
+                            <option value="hotspot">Mobile Hotspot</option>
+                        </select>
+                    </div>
+                    <div class="config-group">
+                        <label>Environment Type</label>
+                        <select id="configEnvironment">
+                            <option value="campus">🎓 Campus</option>
+                            <option value="enterprise">🏢 Enterprise</option>
+                            <option value="public">📶 Public WiFi</option>
+                            <option value="demo">🎮 Demo Mode</option>
+                        </select>
+                    </div>
+                    <div class="config-group">
+                        <label>Network Subnet</label>
+                        <input type="text" id="configSubnet" placeholder="e.g., 192.168.1.0/24"
+                            value="192.168.137.0/24">
+                    </div>
+                    <div class="config-group">
+                        <label>Alert Sensitivity</label>
+                        <select id="configSensitivity">
+                            <option value="low">Low (Less Noise)</option>
+                            <option value="medium" selected>Medium (Balanced)</option>
+                            <option value="high">High (Catch All)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="config-actions">
+                    <button class="btn btn-primary" onclick="applyConfig()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        Apply Configuration
+                    </button>
+                    <button class="btn btn-secondary" onclick="showFullGuide()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                        </svg>
+                        Full Deployment Guide
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Scenarios Panel for Judges -->
+    <section class="demo-scenarios-panel">
+        <div class="demo-header">
+            <h2>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                        d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                </svg>
+                Attack Simulation Scenarios
+            </h2>
+            <span class="demo-subtitle">Click to trigger real-time detection demos</span>
+        </div>
+        <div class="scenario-grid">
+            <button class="scenario-btn" onclick="runScenario('port_scan')" id="btn-port-scan">
+                <div class="scenario-icon critical">🔍</div>
+                <div class="scenario-info">
+                    <span class="scenario-name">Port Scan</span>
+                    <span class="scenario-desc">T1046 - Network Service Discovery</span>
+                </div>
+                <div class="scenario-status" id="status-port-scan"></div>
+            </button>
+            <button class="scenario-btn" onclick="runScenario('brute_force')" id="btn-brute-force">
+                <div class="scenario-icon high">🔑</div>
+                <div class="scenario-info">
+                    <span class="scenario-name">Brute Force</span>
+                    <span class="scenario-desc">T1110 - SSH Password Attack</span>
+                </div>
+                <div class="scenario-status" id="status-brute-force"></div>
+            </button>
+            <button class="scenario-btn" onclick="runScenario('dns_tunnel')" id="btn-dns-tunnel">
+                <div class="scenario-icon high">🌐</div>
+                <div class="scenario-info">
+                    <span class="scenario-name">DNS Tunneling</span>
+                    <span class="scenario-desc">T1071.004 - Data Exfiltration via DNS</span>
+                </div>
+                <div class="scenario-status" id="status-dns-tunnel"></div>
+            </button>
+            <button class="scenario-btn" onclick="runScenario('data_exfil')" id="btn-data-exfil">
+                <div class="scenario-icon critical">📤</div>
+                <div class="scenario-info">
+                    <span class="scenario-name">Data Exfiltration</span>
+                    <span class="scenario-desc">T1048 - Large Data Transfer</span>
+                </div>
+                <div class="scenario-status" id="status-data-exfil"></div>
+            </button>
+            <button class="scenario-btn" onclick="runScenario('malware_c2')" id="btn-malware-c2">
+                <div class="scenario-icon critical">🦠</div>
+                <div class="scenario-info">
+                    <span class="scenario-name">Malware C2</span>
+                    <span class="scenario-desc">T1573 - Encrypted Channel</span>
+                </div>
+                <div class="scenario-status" id="status-malware-c2"></div>
+            </button>
+            <button class="scenario-btn" onclick="runScenario('anomaly')" id="btn-anomaly">
+                <div class="scenario-icon medium">📊</div>
+                <div class="scenario-info">
+                    <span class="scenario-name">Behavior Anomaly</span>
+                    <span class="scenario-desc">UEBA - Unusual Activity Pattern</span>
+                </div>
+                <div class="scenario-status" id="status-anomaly"></div>
+            </button>
+        </div>
+        <div class="scenario-result" id="scenarioResult">
+            <div class="result-header">Detection Result</div>
+            <div class="result-content" id="resultContent">
+                Click a scenario button above to see real-time detection results...
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Grid -->
+    <main class="main-grid">
+        <!-- Alerts Panel -->
+        <section class="panel alerts-panel">
+            <div class="panel-header">
+                <h2>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+                    </svg>
+                    Security Alerts
+                </h2>
+                <div class="panel-controls">
+                    <select id="severityFilter" onchange="filterAlerts()">
+                        <option value="all">All Severities</option>
+                        <option value="critical">Critical</option>
+                        <option value="high">High</option>
+                        <option value="medium">Medium</option>
+                        <option value="low">Low</option>
+                    </select>
+                </div>
+            </div>
+            <div class="alerts-container" id="alertsContainer">
+                <div class="empty-state">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        <path d="M9 12l2 2 4-4" />
+                    </svg>
+                    <p>No alerts detected</p>
+                    <span>Click "Generate Demo" to simulate network traffic</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Network Graph Panel -->
+        <section class="panel graph-panel">
+            <div class="panel-header">
+                <h2>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="18" cy="5" r="3" />
+                        <circle cx="6" cy="12" r="3" />
+                        <circle cx="18" cy="19" r="3" />
+                        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
+                        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+                    </svg>
+                    Network Communication Graph
+                </h2>
+                <div class="legend">
+                    <span class="legend-item"><span class="dot hostel"></span>Hostel</span>
+                    <span class="legend-item"><span class="dot lab"></span>Lab</span>
+                    <span class="legend-item"><span class="dot server"></span>Server</span>
+                    <span class="legend-item"><span class="dot admin"></span>Admin</span>
+                    <span class="legend-item"><span class="dot external"></span>External</span>
+                </div>
+            </div>
+            <div class="graph-container" id="networkGraph">
+                <div class="empty-state">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                        <circle cx="18" cy="5" r="3" />
+                        <circle cx="6" cy="12" r="3" />
+                        <circle cx="18" cy="19" r="3" />
+                        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
+                        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+                    </svg>
+                    <p>Network graph will appear here</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Traffic Chart Panel -->
+        <section class="panel chart-panel">
+            <div class="panel-header">
+                <h2>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="20" x2="18" y2="10" />
+                        <line x1="12" y1="20" x2="12" y2="4" />
+                        <line x1="6" y1="20" x2="6" y2="14" />
+                    </svg>
+                    Traffic Overview
+                </h2>
+            </div>
+            <div class="chart-container">
+                <canvas id="trafficChart"></canvas>
+            </div>
+        </section>
+
+        <!-- MITRE ATT&CK Heatmap -->
+        <section class="panel mitre-panel">
+            <div class="panel-header">
+                <h2>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                        <line x1="3" y1="9" x2="21" y2="9" />
+                        <line x1="9" y1="21" x2="9" y2="9" />
+                    </svg>
+                    MITRE ATT&CK Heatmap
+                </h2>
+                <div class="legend">
+                    <span class="legend-item"><span class="dot"
+                            style="background: rgba(239, 68, 68, 0.2)"></span>Detected</span>
+                    <span class="legend-item"><span class="dot" style="background: rgba(255, 255, 255, 0.05)"></span>No
+                        Activity</span>
+                </div>
+            </div>
+            <div class="mitre-container" id="mitreHeatmap">
+                <!-- Grid will be rendered here -->
+            </div>
+        </section>
+
+        <!-- Threat Hunting Panel -->
+        <section class="panel hunting-panel">
+            <div class="panel-header">
+                <h2>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    Threat Hunting
+                </h2>
+                <div class="panel-controls">
+                    <button class="btn btn-secondary btn-sm" onclick="exportSearchResults()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Export
+                    </button>
+                </div>
+            </div>
+            <div class="hunting-container">
+                <div class="query-builder">
+                    <div class="form-group">
+                        <label>Time Range</label>
+                        <select id="huntTimeRange">
+                            <option value="1h">Last 1 Hour</option>
+                            <option value="24h">Last 24 Hours</option>
+                            <option value="7d">Last 7 Days</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>IP Address</label>
+                        <input type="text" id="huntIP" placeholder="e.g. 192.168.1.5">
+                    </div>
+                    <div class="form-group">
+                        <label>Protocol</label>
+                        <select id="huntProtocol">
+                            <option value="">Any</option>
+                            <option value="TCP">TCP</option>
+                            <option value="UDP">UDP</option>
+                            <option value="ICMP">ICMP</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary" onclick="executeHunt()">Search</button>
+                </div>
+                <div class="results-table-wrapper">
+                    <table class="results-table" id="huntResults">
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Source</th>
+                                <th>Destination</th>
+                                <th>Protocol</th>
+                                <th>Size</th>
+                                <th>Risk</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Results here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Investigation Timeline -->
+        <section class="panel timeline-panel">
+            <div class="panel-header">
+                <h2>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <polyline points="12 6 12 12 16 14" />
+                    </svg>
+                    Threat Timeline
+                </h2>
+            </div>
+            <div class="timeline-container" id="threatTimeline">
+                <!-- Timeline will be rendered here -->
+            </div>
+        </section>
+
+        <!-- Alert Details Panel -->
+        <section class="panel details-panel" id="detailsPanel">
+            <div class="panel-header">
+                <h2>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="12" y1="16" x2="12" y2="12" />
+                        <line x1="12" y1="8" x2="12.01" y2="8" />
+                    </svg>
+                    Alert Details
+                </h2>
+                <button class="close-btn" onclick="closeDetails()">×</button>
+            </div>
+            <div class="details-content" id="detailsContent">
+                <div class="empty-state">
+                    <p>Select an alert to view details</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <span>Campus Cyber Intelligence Platform v2.0</span>
+        <span>•</span>
+        <span>Situational Awareness • Decision Intelligence</span>
+        <span>•</span>
+        <span id="lastUpdate">Last update: Never</span>
+    </footer>
+
+    <script src="app.js?v=graph-v2"></script>
+</body>
+
+</html>

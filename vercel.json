@@ -1,0 +1,16 @@
+{
+    "version": 2,
+    "name": "raayan-pitch",
+    "builds": [
+        {
+            "src": "presentation.html",
+            "use": "@vercel/static"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/",
+            "dest": "/presentation.html"
+        }
+    ]
+}

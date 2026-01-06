@@ -1,0 +1,38 @@
+# Core Web Framework
+fastapi==0.104.1
+uvicorn==0.24.0
+python-dateutil==2.8.2
+
+# Data Processing
+pandas==2.1.3
+numpy==1.26.2
+
+# Machine Learning - Core
+scikit-learn==1.3.2
+pydantic==2.5.2
+
+# Machine Learning - Ensemble (Optional but recommended)
+xgboost>=2.0.0
+
+# Deep Learning (Optional - falls back to sklearn MLP if unavailable)
+# tensorflow>=2.15.0  # Uncomment for GPU-accelerated LSTM
+# torch>=2.1.0  # Alternative DL framework
+
+# Database
+aiosqlite>=0.19.0
+
+# Async HTTP (for threat intel integrations)
+aiohttp>=3.9.0
+httpx>=0.25.0
+
+# Security
+python-jose[cryptography]>=3.3.0
+
+# Monitoring
+prometheus-client>=0.19.0
+
+# Network Capture
+scapy>=2.5.0
+
+# Caching & Infrastructure
+redis>=5.0.1

@@ -1,0 +1,299 @@
+============================================================
+  INTERFACE DEBUGGER
+============================================================
+
+Default Scapy Interface: \Device\NPF_{B0701688-78A5-46F5-B735-B2882349364A}
+
+Scanning Windows Interfaces:
+Name: Ethernet 2
+Desc: Realtek USB GbE Family Controller
+GUID: {8A705DA4-8E50-4E0F-BB42-CA7648C824AA}
+IP (Scapy): N/A
+--------------------
+Name: McAfee VPN
+Desc: TAP-Windows Adapter V9
+GUID: {C6BC6ACF-0CFD-49BE-842B-A112BA279438}
+IP (Scapy): N/A
+--------------------
+Name: Local Area Connection* 1
+Desc: Microsoft Wi-Fi Direct Virtual Adapter
+GUID: {74FAC959-6D62-434D-807F-C910597F6EF9}
+IP (Scapy): N/A
+--------------------
+Name: Local Area Connection* 2
+Desc: Microsoft Wi-Fi Direct Virtual Adapter #2
+GUID: {5B0BEE77-9DCF-4BC6-8129-64D7A78EF864}
+IP (Scapy): N/A
+--------------------
+Name: Wi-Fi
+Desc: Realtek RTL8852BE WiFi 6 802.11ax PCIe Adapter
+GUID: {B0701688-78A5-46F5-B735-B2882349364A}
+IP (Scapy): N/A
+--------------------
+Name: VMware Network Adapter VMnet1
+Desc: VMware Virtual Ethernet Adapter for VMnet1
+GUID: {3A78FB88-953A-431C-9070-DA3F10E41114}
+IP (Scapy): N/A
+--------------------
+Name: VMware Network Adapter VMnet8
+Desc: VMware Virtual Ethernet Adapter for VMnet8
+GUID: {495FBC0A-AC1E-4276-8AF8-81067A1EBAC8}
+IP (Scapy): N/A
+--------------------
+Name: Bluetooth Network Connection
+Desc: Bluetooth Device (Personal Area Network)
+GUID: {5C4D80E3-9E6C-4CC4-B1B9-49E943F387B3}
+IP (Scapy): N/A
+--------------------
+Name: Loopback Pseudo-Interface 1
+Desc: Software Loopback Interface 1
+GUID: {0F69A75A-DC66-11EC-AF08-806E6F6E6963}
+IP (Scapy): N/A
+--------------------
+Name: Local Area Connection* 8-WFP Native MAC Layer LightWeight Filter-0000
+Desc: WAN Miniport (IP)-WFP Native MAC Layer LightWeight Filter-0000
+GUID: {5AD44002-DFAD-11F0-AF82-B81EA4DC7C2E}
+IP (Scapy): N/A
+--------------------
+Name: Local Area Connection* 8-QoS Packet Scheduler-0000
+Desc: WAN Miniport (IP)-QoS Packet Scheduler-0000
+GUID: {5AD44003-DFAD-11F0-AF82-B81EA4DC7C2E}
+IP (Scapy): N/A
+--------------------
+Name: Local Area Connection* 9-WFP Native MAC Layer LightWeight Filter-0000
+Desc: WAN Miniport (IPv6)-WFP Native MAC Layer LightWeight Filter-0000
+GUID: {5AD44004-DFAD-11F0-AF82-B81EA4DC7C2E}
+IP (Scapy): N/A
+--------------------
+Name: Local Area Connection* 9-QoS Packet Scheduler-0000
+Desc: WAN Miniport (IPv6)-QoS Packet Scheduler-0000
+GUID: {5AD44005-DFAD-11F0-AF82-B81EA4DC7C2E}
+IP (Scapy): N/A
+--------------------
+Name: Local Area Connection* 10-WFP Native MAC Layer LightWeight Filter-0000
+Desc: WAN Miniport (Network Monitor)-WFP Native MAC Layer LightWeight Filter-0000
+GUID: {5AD44006-DFAD-11F0-AF82-B81EA4DC7C2E}
+IP (Scapy): N/A
+--------------------
+Name: Local Area Connection* 10-QoS Packet Scheduler-0000
+Desc: WAN Miniport (Network Monitor)-QoS Packet Scheduler-0000
+GUID: {5AD44007-DFAD-11F0-AF82-B81EA4DC7C2E}
+IP (Scapy): N/A
+--------------------
+Name: Local Area Connection* 8-Npcap Packet Driver (NPCAP)-0000
+Desc: WAN Miniport (IP)-Npcap Packet Driver (NPCAP)-0000
+GUID: {993B58F3-E8A0-11F0-AF82-B81EA4DC7C2E}
+IP (Scapy): N/A
+--------------------
+Name: Local Area Connection* 9-Npcap Packet Driver (NPCAP)-0000
+Desc: WAN Miniport (IPv6)-Npcap Packet Driver (NPCAP)-0000
+GUID: {993B58EE-E8A0-11F0-AF82-B81EA4DC7C2E}
+IP (Scapy): N/A
+--------------------
+Name: Bluetooth Network Connection-Npcap Packet Driver (NPCAP)-0000
+Desc: Bluetooth Device (Personal Area Network)-Npcap Packet Driver (NPCAP)-0000
+GUID: {993B58EB-E8A0-11F0-AF82-B81EA4DC7C2E}
+IP (Scapy): N/A
+--------------------
+Name: VMware Network Adapter VMnet8-Npcap Packet Driver (NPCAP)-0000
+Desc: VMware Virtual Ethernet Adapter for VMnet8-Npcap Packet Driver (NPCAP)-0000
+GUID: {993B58E8-E8A0-11F0-AF82-B81EA4DC7C2E}
+IP (Scapy): N/A
+--------------------
+Name: VMware Network Adapter VMnet1-Npcap Packet Driver (NPCAP)-0000
+Desc: VMware Virtual Ethernet Adapter for VMnet1-Npcap Packet Driver (NPCAP)-0000
+GUID: {993B58E7-E8A0-11F0-AF82-B81EA4DC7C2E}
+IP (Scapy): N/A
+--------------------
+Name: Local Area Connection* 10-Npcap Packet Driver (NPCAP)-0000
+Desc: WAN Miniport (Network Monitor)-Npcap Packet Driver (NPCAP)-0000
+GUID: {993B58E6-E8A0-11F0-AF82-B81EA4DC7C2E}
+IP (Scapy): N/A
+--------------------
+Name: Ethernet 2-WFP Native MAC Layer LightWeight Filter-0000
+Desc: Realtek USB GbE Family Controller-WFP Native MAC Layer LightWeight Filter-0000
+GUID: {FA5878D9-EA43-11F0-AF82-B81EA4DC7C2E}
+IP (Scapy): N/A
+--------------------
+Name: Ethernet 2-Npcap Packet Driver (NPCAP)-0000
+Desc: Realtek USB GbE Family Controller-Npcap Packet Driver (NPCAP)-0000
+GUID: {FA5878BB-EA43-11F0-AF82-B81EA4DC7C2E}
+IP (Scapy): N/A
+--------------------
+Name: Ethernet 2-QoS Packet Scheduler-0000
+Desc: Realtek USB GbE Family Controller-QoS Packet Scheduler-0000
+GUID: {FA5878DA-EA43-11F0-AF82-B81EA4DC7C2E}
+IP (Scapy): N/A
+--------------------
+Name: Ethernet 2-WFP 802.3 MAC Layer LightWeight Filter-0000
+Desc: Realtek USB GbE Family Controller-WFP 802.3 MAC Layer LightWeight Filter-0000
+GUID: {FA5878DB-EA43-11F0-AF82-B81EA4DC7C2E}
+IP (Scapy): N/A
+--------------------
+Name: Ethernet (Kernel Debugger)
+Desc: Microsoft Kernel Debug Network Adapter
+GUID: {458540B9-6F35-4B1D-ADEB-08A849AF3787}
+IP (Scapy): N/A
+--------------------
+Name: Ethernet
+Desc: ASIX AX88772C USB2.0 to Fast Ethernet Adapter
+GUID: {0AA5CA63-CF56-46C3-AF9C-492374A7FFC9}
+IP (Scapy): N/A
+--------------------
+Name: Local Area Connection* 8
+Desc: WAN Miniport (IP)
+GUID: {EE51A68D-8052-4757-A990-6E4EA1356D7A}
+IP (Scapy): N/A
+--------------------
+Name: Local Area Connection* 9
+Desc: WAN Miniport (IPv6)
+GUID: {9D0182B7-2D20-46E3-99F8-6CC3D80B7BC4}
+IP (Scapy): N/A
+--------------------
+Name: Local Area Connection* 10
+Desc: WAN Miniport (Network Monitor)
+GUID: {39262CF6-F7B3-4170-8052-E27DB6BE325D}
+IP (Scapy): N/A
+--------------------
+Name: Local Area Connection* 7
+Desc: WAN Miniport (PPPOE)
+GUID: {A1D6FE10-3835-4CC4-A29E-D4F5CCDF96D0}
+IP (Scapy): N/A
+--------------------
+Name: McAfee VPN-WFP Native MAC Layer LightWeight Filter-0000
+Desc: TAP-Windows Adapter V9-WFP Native MAC Layer LightWeight Filter-0000
+GUID: {6C530D17-E413-11F0-AF82-B81EA4DC7C2E}
+IP (Scapy): N/A
+--------------------
+Name: McAfee VPN-Npcap Packet Driver (NPCAP)-0000
+Desc: TAP-Windows Adapter V9-Npcap Packet Driver (NPCAP)-0000
+GUID: {993B58F1-E8A0-11F0-AF82-B81EA4DC7C2E}
+IP (Scapy): N/A
+--------------------
+Name: McAfee VPN-WFP 802.3 MAC Layer LightWeight Filter-0000
+Desc: TAP-Windows Adapter V9-WFP 802.3 MAC Layer LightWeight Filter-0000
+GUID: {6C530D19-E413-11F0-AF82-B81EA4DC7C2E}
+IP (Scapy): N/A
+--------------------
+Name: McAfee VPN-QoS Packet Scheduler-0000
+Desc: TAP-Windows Adapter V9-QoS Packet Scheduler-0000
+GUID: {993B58F2-E8A0-11F0-AF82-B81EA4DC7C2E}
+IP (Scapy): N/A
+--------------------
+Name: Wi-Fi-WFP Native MAC Layer LightWeight Filter-0000
+Desc: Realtek RTL8852BE WiFi 6 802.11ax PCIe Adapter-WFP Native MAC Layer LightWeight Filter-0000
+GUID: {EB64D771-E725-11F0-AF82-B81EA4DC7C2E}
+IP (Scapy): N/A
+--------------------
+Name: Wi-Fi-Virtual WiFi Filter Driver-0000
+Desc: Realtek RTL8852BE WiFi 6 802.11ax PCIe Adapter-Virtual WiFi Filter Driver-0000
+GUID: {CFD6EF80-D0BD-11EF-AF37-F7A95A9DB9A3}
+IP (Scapy): N/A
+--------------------
+Name: Wi-Fi-Native WiFi Filter Driver-0000
+Desc: Realtek RTL8852BE WiFi 6 802.11ax PCIe Adapter-Native WiFi Filter Driver-0000
+GUID: {CFD6EF81-D0BD-11EF-AF37-F7A95A9DB9A3}
+IP (Scapy): N/A
+--------------------
+Name: Wi-Fi-Npcap Packet Driver (NPCAP)-0000
+Desc: Realtek RTL8852BE WiFi 6 802.11ax PCIe Adapter-Npcap Packet Driver (NPCAP)-0000
+GUID: {993B58EF-E8A0-11F0-AF82-B81EA4DC7C2E}
+IP (Scapy): N/A
+--------------------
+Name: Wi-Fi-WFP 802.3 MAC Layer LightWeight Filter-0000
+Desc: Realtek RTL8852BE WiFi 6 802.11ax PCIe Adapter-WFP 802.3 MAC Layer LightWeight Filter-0000
+GUID: {EB64D773-E725-11F0-AF82-B81EA4DC7C2E}
+IP (Scapy): N/A
+--------------------
+Name: Local Area Connection* 2-WFP Native MAC Layer LightWeight Filter-0000
+Desc: Microsoft Wi-Fi Direct Virtual Adapter #2-WFP Native MAC Layer LightWeight Filter-0000
+GUID: {993B5003-E8A0-11F0-AF82-B81EA4DC7C2E}
+IP (Scapy): N/A
+--------------------
+Name: Local Area Connection* 1-WFP Native MAC Layer LightWeight Filter-0000
+Desc: Microsoft Wi-Fi Direct Virtual Adapter-WFP Native MAC Layer LightWeight Filter-0000
+GUID: {993B4F2F-E8A0-11F0-AF82-B81EA4DC7C2E}
+IP (Scapy): N/A
+--------------------
+Name: Local Area Connection* 1-Native WiFi Filter Driver-0000
+Desc: Microsoft Wi-Fi Direct Virtual Adapter-Native WiFi Filter Driver-0000
+GUID: {CFD6EF86-D0BD-11EF-AF37-F7A95A9DB9A3}
+IP (Scapy): N/A
+--------------------
+Name: Local Area Connection* 1-Npcap Packet Driver (NPCAP)-0000
+Desc: Microsoft Wi-Fi Direct Virtual Adapter-Npcap Packet Driver (NPCAP)-0000
+GUID: {993B58EC-E8A0-11F0-AF82-B81EA4DC7C2E}
+IP (Scapy): N/A
+--------------------
+Name: Local Area Connection* 1-WFP 802.3 MAC Layer LightWeight Filter-0000
+Desc: Microsoft Wi-Fi Direct Virtual Adapter-WFP 802.3 MAC Layer LightWeight Filter-0000
+GUID: {993B4F31-E8A0-11F0-AF82-B81EA4DC7C2E}
+IP (Scapy): N/A
+--------------------
+Name: Local Area Connection* 2-Native WiFi Filter Driver-0000
+Desc: Microsoft Wi-Fi Direct Virtual Adapter #2-Native WiFi Filter Driver-0000
+GUID: {40C49461-D0BE-11EF-AF38-B81EA4DC7C2E}
+IP (Scapy): N/A
+--------------------
+Name: Local Area Connection* 2-Npcap Packet Driver (NPCAP)-0000
+Desc: Microsoft Wi-Fi Direct Virtual Adapter #2-Npcap Packet Driver (NPCAP)-0000
+GUID: {993B58E9-E8A0-11F0-AF82-B81EA4DC7C2E}
+IP (Scapy): N/A
+--------------------
+Name: Local Area Connection* 2-WFP 802.3 MAC Layer LightWeight Filter-0000
+Desc: Microsoft Wi-Fi Direct Virtual Adapter #2-WFP 802.3 MAC Layer LightWeight Filter-0000
+GUID: {993B5005-E8A0-11F0-AF82-B81EA4DC7C2E}
+IP (Scapy): N/A
+--------------------
+Name: Local Area Connection* 2-QoS Packet Scheduler-0000
+Desc: Microsoft Wi-Fi Direct Virtual Adapter #2-QoS Packet Scheduler-0000
+GUID: {993B58EA-E8A0-11F0-AF82-B81EA4DC7C2E}
+IP (Scapy): N/A
+--------------------
+Name: Local Area Connection* 1-QoS Packet Scheduler-0000
+Desc: Microsoft Wi-Fi Direct Virtual Adapter-QoS Packet Scheduler-0000
+GUID: {993B58ED-E8A0-11F0-AF82-B81EA4DC7C2E}
+IP (Scapy): N/A
+--------------------
+Name: Wi-Fi-QoS Packet Scheduler-0000
+Desc: Realtek RTL8852BE WiFi 6 802.11ax PCIe Adapter-QoS Packet Scheduler-0000
+GUID: {993B58F0-E8A0-11F0-AF82-B81EA4DC7C2E}
+IP (Scapy): N/A
+--------------------
+Name: Teredo Tunneling Pseudo-Interface
+Desc: Microsoft Teredo Tunneling Adapter
+GUID: {93123211-9629-4E04-82F0-EA2E4F221468}
+IP (Scapy): N/A
+--------------------
+Name: Microsoft IP-HTTPS Platform Interface
+Desc: Microsoft IP-HTTPS Platform Adapter
+GUID: {2EE2C70C-A092-4D88-A654-98C8D7645CD5}
+IP (Scapy): N/A
+--------------------
+Name: 6to4 Adapter
+Desc: Microsoft 6to4 Adapter
+GUID: {07374750-E68B-490E-9330-9FD785CD71B6}
+IP (Scapy): N/A
+--------------------
+Name: Local Area Connection* 3
+Desc: WAN Miniport (SSTP)
+GUID: {A1EB0451-B728-49D2-B86E-AA3D1AA9965A}
+IP (Scapy): N/A
+--------------------
+Name: Local Area Connection* 4
+Desc: WAN Miniport (IKEv2)
+GUID: {3140AD5F-9C74-472C-BE12-C56C9C73732D}
+IP (Scapy): N/A
+--------------------
+Name: Local Area Connection* 5
+Desc: WAN Miniport (L2TP)
+GUID: {B1400A3D-B6CF-47B4-8F89-BE3608D93DF7}
+IP (Scapy): N/A
+--------------------
+Name: Local Area Connection* 6
+Desc: WAN Miniport (PPTP)
+GUID: {A6CF11D6-C34D-46B1-ADBB-A62464DFF001}
+IP (Scapy): N/A
+--------------------
+
+ done.
